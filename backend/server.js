@@ -8,10 +8,10 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection string (local)
-const MONGO_URI = "mongodb://127.0.0.1:27017/chatbot";
+//const MONGO_URI = "mongodb://127.0.0.1:27017/chatbot";
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ Mongo error:", err.message));
 
@@ -47,5 +47,5 @@ app.post("/chat",async (req,res)=>{
   res.status(500).json("Internal server error")
     }
 })
-const PORT = 5000; 
+const PORT = process.env.PORT || 5000; 
 app.listen(PORT, () => console.log(`✅ Server started on port ${PORT}`));
