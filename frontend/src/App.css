@@ -1,0 +1,144 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+   height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+ 
+  display: flex;
+  padding :1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(15px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.chatBubble{
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in;
+}
+.chatBubble.userMsg{
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+.chatBubble.botMsg{
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+.typingIndicator{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap :5px;
+}
+.typeWriter {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #00eaff 25%,
+    #ffffff 50%,
+    #00eaff 75%,
+    #ffffff 100%
+  );
+  background-size: 300%;         /* makes gradient longer for smooth flow */
+  -webkit-background-clip: text; /* makes the gradient visible inside text */
+  -webkit-text-fill-color: transparent;
+  animation: shimmerFlow 3s linear infinite;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.6); /* subtle glowing edge */
+}
+
+.Dot{
+  width: 8px;
+  height: 8px;
+  background-color: #999;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+.Dot:nth-child(1){
+  animation-delay: 0s;
+}
+.Dot:nth-child(2){
+  animation-delay: 0.2s;
+}
+.Dot:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+
+.ChatArea{
+  flex:1;
+  overflow-y: scroll;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+background-blend-mode: darken; 
+}
+
+
+.bottomArea{
+  display: flex;
+  flex-direction: row;
+ 
+  padding: 10px;
+  text-align: right;
+ 
+  
+   background-color: rgba(0, 0, 0, 0.3);
+}
+.MessageInput{
+  flex:1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f1f0f0;
+}
+.bottomArea button {
+  background-color: #054c52;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+.sendIcon {
+  width: 43px;
+  height: 47px;
+  
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
